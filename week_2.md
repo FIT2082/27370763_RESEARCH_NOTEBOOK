@@ -9,3 +9,5 @@ We have met our instructor, Lachlan on Wednesday, 1st of August, and there are t
   the period of time sd and mean to see if there is an edge or not (eg if a week, deviation is low, edge!)
   And we are trying to translate the matlab code and waiting for some sample datasets.
   
+PROGRESS
+-converting matlab data into python arrays
