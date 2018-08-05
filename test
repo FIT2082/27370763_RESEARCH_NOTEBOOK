@@ -1,9 +1,0 @@
-import scipy.io
-import numpy as np
-import matplotlib.pyplot as plot
-data = scipy.io.loadmat('house00002.mat')
-matrix = data['image']
-
-#convert data into array (each array = 1 time slot, index(item) = day
-print(np.squeeze(np.matrix(matrix)).tolist())
-plot.pcolor(matrix) #plot
