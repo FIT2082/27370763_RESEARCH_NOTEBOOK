@@ -11,3 +11,5 @@ We have met our instructor, Lachlan on Wednesday, 1st of August, and there are t
   
 PROGRESS:
 - converting matlab data into python arrays
+- successfully convert matlab data into graphs in python
+- finding standard deviation of each day (compare them every two sets of data)
