@@ -1,1 +1,2 @@
 On Wednesday, I have a meeting with Lachlan and other master students who are also working with Lachlan to discuss more on the
+research topic. Lachlan also mentioned some points we should aware when doing our project specification. On the other side, me and sorayez are working on the documents of our project specification. Not much research has been done this week as most of the time we have been doing the specification. We hope to translate the code next week and start working on it.
