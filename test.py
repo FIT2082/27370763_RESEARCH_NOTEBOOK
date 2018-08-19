@@ -37,8 +37,18 @@ def findmeansdratio_hr(matrixlist): #find the mean - standard deviation ratio of
         msr_hour.append(np.mean(day)/np.std(day))
     return msr_hour
 #####################################################################################
+def findedges(matrixlist, varlist):
+    for i in range(48):
+        for j in range(len(matrixlist[i])-1):
+            if abs(matrixlist[i][j]-matrixlist[i][j+1]) < varlist[i] and matrixlist[i][j] > 1:
+                matrixlist[i][j] = 2
+            
+    
 
 def clean(matrixlist): #remove noises
     pass
+
 colormap(matrixlist)
-print(findmeansdratio_hr(matrixlist))
+findedges(matrixlist,findmeansdratio_hr(matrixlist))
+colormap(matrixlist)
+
