@@ -11,15 +11,34 @@ def colormap(matrixlist): #plotting
     plt.pcolor(matrixlist)
     plt.gca().invert_yaxis()
     plt.show()
+    
+#####################################################################################
+def findSD_hr(matrixlist): #find the standard deviation of whole day (per hour)
+    SD_hour = []
+    for day in matrixlist:
+        SD_hour.append(np.std(day))
+    return SD_hour
+    
+def findVar_hr(matrixlist): #find the variance of whole day (per hour)
+    var_hour = []
+    for day in matrixlist:
+        var_hour.append(np.var(day))
+    return var_hour
 
-def findSD(matrixlist): #find the standard deviation of whole year (per day)
-    SD_year = []
-    for days in range(0, 365):
-        current_day_array = []
-        for hours in range(len(matrixlist)):
-            current_day_array.append(matrixlist[hours][days])
-        current_day_sd = np.std(current_day_array)
-        SD_year.append(current_day_sd)
-    return SD_year
+def findmean_hr(matrixlist): #find the mean of whole day (per hour)
+    mean_hour = []
+    for day in matrixlist:
+        mean_hour.append(np.mean(day))
+    return mean_hour
 
+def findmeansdratio_hr(matrixlist): #find the mean - standard deviation ratio of whole day (per hour)
+    msr_hour = []
+    for day in matrixlist:
+        msr_hour.append(np.mean(day)/np.std(day))
+    return msr_hour
+#####################################################################################
+
+def clean(matrixlist): #remove noises
+    pass
 colormap(matrixlist)
+print(findmeansdratio_hr(matrixlist))
