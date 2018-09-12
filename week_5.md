@@ -11,3 +11,7 @@ Figure: Data after applying median-filter to it
 
 From the figure we can see that most of the noises are cleared. However, the edges are also kind of cleared out after using the median filter function.
 Our aim next week is to link these broken edges together and also, we are going to look at machine learning and calculations on the data in order to find out a way to classify edges.
+
+Also, a function that plots multiple graphs has been implemented for our convenience when testing for algorithms.
+
+Our aim next week is to improve the median filter that we were using, so that we can get what we needed.
