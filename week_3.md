@@ -8,4 +8,4 @@ While we have tried some edge detection techniques (finding the standard deviati
 
 ![edgedetect](/images/edgedetect.png)
 
-Lachlan told us to focus on mean- standard deviation ratio while for now, we will be focusing on data cleaning and finish translating the edge detection algorithm. After the algorithm is successfully translated, our research can start.
+Lachlan told us to focus on mean- standard deviation ratio while for now, we will be focusing on data cleaning and finish translating the edge detection algorithm. After the algorithm is successfully translated, our research can start. After successfully classifying edges, we can look at different machine learning algorithm such as Long-Short term memory and using panda later. Anyway, the most important things to do now is to extract the edges out for processing.
