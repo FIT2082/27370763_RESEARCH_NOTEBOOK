@@ -1,6 +1,6 @@
 Since the project specification is due this Friday night, we are focusing on the spec instead of doing research in this week. However, we also have time to plan our timeline:
 
-WEEK 2:
+WEEK 2: \n
 Understanding the project requirements, exploring different ways to detect edges and proposing them to the research supervisor, literature review on different machine learning including image recognition techniques and statistics
 
 WEEK 3:
