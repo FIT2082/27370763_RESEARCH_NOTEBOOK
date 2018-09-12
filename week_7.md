@@ -4,4 +4,9 @@ This week, I am focusing on working in linking edges and remove edges that have 
 
 First approach:
 Extending edges that have been detected until the next pixel is considered as "not edge", while removing single pixels from each time slot.
+
+(FIRST TRY)
 ![link img](images/linkedge.jpg)
+It looks like this approach works pretty well. However, it will extends by mistake and make edges that did not exist. This is due to wrong implementations in code. 
+
+
