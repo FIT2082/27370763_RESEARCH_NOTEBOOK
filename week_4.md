@@ -19,4 +19,7 @@ WEEK 11
 Presentation of the project and discussion about writing Final Report
 
 
-Also, we have implemented code in detecting edges horizontally instead of vertically, however, the old approach will be taken as our main algorithm.
+Also, we have implemented code in detecting edges horizontally instead of vertically, that is, we looked at the data by going through each time slot instead of looking at each day. 
+Below is the rects detected by the algorithm:
+![rect img](/images/rect.jpg)
+However, the old approach will be taken as our main algorithm as looking at each time slot gave us rects intead of edges, which is not the result we want as we only consider edges as our target to investigate. So, we need to denoise the image before processing instead of finding a new way to detect edges, as we already have an appropriate algorithm for detecting edges.
