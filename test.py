@@ -1,27 +1,38 @@
-
 import scipy.io
 import scipy.signal
 import numpy as np
 import matplotlib.pyplot as plt
-data = scipy.io.loadmat('house00008.mat')
+data = scipy.io.loadmat('house00001.mat')
 matrix = data['image']
 matrixlist = np.squeeze(np.matrix(matrix)).tolist()
 
 #####################################################################################
-
 def colormap(matrixlist): #plotting
     plt.pcolor(matrixlist)
     plt.gca().invert_yaxis()
     plt.show()
     
-def multiplot(start,ran): #plotting multiple graphs (can be improved to edge multiple)
-    for i in range(start,ran):
+def multiplot(start,run): #plotting multiple graphs (can be improved to edge multiple)
+    for i in range(start,run):
         data = scipy.io.loadmat(('house'+str(i).zfill(5))+'.mat')
         matrix = data['image']
         matrixlist = np.squeeze(np.matrix(matrix)).tolist()
         colormap(matrixlist)
         colormap(findedges(matrixlist, findSD(matrixlist, True)))
-    
+
+def multiextract(start, run):#extract edges data out
+    newpath = 'edges'
+    if not os.path.exists(newpath):
+        os.makedirs(newpath)
+    for i in range(start,run):
+        data = scipy.io.loadmat(('house'+str(i).zfill(5))+'.mat')
+        matrix = data['image']
+        matrixlist = np.squeeze(np.matrix(matrix)).tolist()
+        edges = extract(findedges(matrixlist, findSD(matrixlist, True)))
+        file = open('edges/house'+str(i).zfill(5),"w+")
+        for item in edges:
+            file.write("%s\n" % item)
+
 #####################################################################################
 def findSD(matrixlist,eachday = False):#find the standard deviation of each time slot (per horizontal)
     if eachday == True: #if eachday is true, sd of each day
@@ -56,7 +67,7 @@ def findmeansdratio(matrixlist,eachday = False): #find the mean - standard devia
     return msr
 
 #####################################################################################
-def find_sub_list(sl,l):
+def find_sub_list(sl,l):#match sublists
     results=[]
     sll=len(sl)
     for ind in (i for i,e in enumerate(l) if e==sl[0]):
@@ -66,8 +77,7 @@ def find_sub_list(sl,l):
 #https://stackoverflow.com/questions/17870544/find-starting-and-ending-indices-of-sublist-in-list
 
 #####################################################################################
-
-def findedges(matrixlist, varlist):
+def findedges(matrixlist, varlist): #denoise, find edges
     matrix = []
     for item in matrixlist:
         item = scipy.signal.medfilt(item,[15])
@@ -103,20 +113,43 @@ def findedges(matrixlist, varlist):
                 for item in cleanlist:
                     for i in range(item[0],item[1]+1):
                         matrix[rows][i] = 0
-    
-            
-    
     return matrix
 
 #####################################################################################
-
-def clean(matrixlist): #remove noises
-    pass
+#extract the starting and ending indices of edges
+def extract(matrix): 
+    result = []
+    for rows in range(len(matrix)):
+        start = 0
+        end = 0
+        if not 2 in matrix[rows]:
+            pass
+        else:
+            for i in range(len(matrix[rows])):
+                if matrix[rows][i] == 0:
+                    pass
+                elif matrix[rows][i] == 2:
+                    j = i
+                    try:
+                        while matrix[rows][j+1] == 2:
+                            j += 1
+                    except IndexError:
+                        pass
+                    result.append([rows,(i,j)])
+    for i in range(len(result)):
+        try:
+            del result[i+1:i+result[i][1][1]-result[i][1][0]+1]
+        except IndexError:
+            pass
+    return result           
+    
+#####################################################################################
 
 #scipy.signal.medfilt(matrixlist)
 #matrixlist = np.swapaxes(matrixlist,0,1).tolist()
 #colormap(matrixlist)
-#unclearedge = findedges(matrixlist, findSD(matrixlist,True))
-#colormap(unclearedge)
-multiplot(100,500)
-##LINK EDGE: TRY LOOKING AT ORIGINAL DATA and compare
+unclearedge = findedges(matrixlist, findSD(matrixlist,True))
+print(extract(unclearedge))
+colormap(unclearedge)
+#multiplot(1,10)
+multiextract(1,3985)
