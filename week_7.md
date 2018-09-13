@@ -14,5 +14,9 @@ It looks like this approach works pretty well. However, it will extends by mista
 In this approach, I still linked the edges. Instead of recreating original edges, I decide to reduce the area of median filtring in order to reduce the possibilty in removing possible edges from the original image.
 Moreover, I have removed many small edges (with length 0 to 20) in order to remove useless informations that we do not considered as an edge. With this, we can now work on classifying the accuracy of the edges using machine learning later on.
 
+More Examples:
+![link2 img](images/clearsample2.jpg)
+
+
 Plans for next week:
 Extract the indices of the edges so that we can apply them to our original data and apply these information to machine learning.
