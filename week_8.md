@@ -1,4 +1,4 @@
-This week, very few research was done as the change in our supervisor.
+This week, very few research was done as the change in our supervisor, while we no guides on what should be done next so we have improved our old edge classifying algorithm a bit and started some research on machine learning.
 
 However, we have met Mahsa on Friday and we explained to her about our project and what we have done so far. So, our progress is that we have completed the statistical method for our edge-finding algorithm and the algorithm works well with most of the datasets.
 
