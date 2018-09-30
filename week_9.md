@@ -4,3 +4,8 @@ The machine learning algorithm we chose was ARIMA (AutoRegressive Integrated Mov
 
 While we are implementing ARIMA, we took 60% of our data as training data and the others as test data. The algorithm will predict the values of our testing datasets and compare the values between the predicted values and the actual values. In order to make sure our prediction is accurate, the algorithm will check through the minimum mean squared error calculated by the predicted and actual values.
 
+
+![arimatest img](images/arima.png)
+We tried through the ARIMA algorithm and it looks like the outcome is pretty good at the current stage.
+
+For next week, we hope to find a better value for the ARIMA algorithm such that we can make the algorithm works better and will create a better output as our final goal.
