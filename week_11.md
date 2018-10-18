@@ -7,3 +7,4 @@ However, Mahsa told us we can try to implement the accuracy detection algorithm 
 We in fact get a 67% accuracy when using the ARIMA detection algorithm using "house0002.mat" as our database. There are some cases that the ARIMA model was working better than the statistical model:
 
 [!arima img](/images/arima-statcompare.png)
+a
