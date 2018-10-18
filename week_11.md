@@ -7,3 +7,8 @@ However, Mahsa told us we can try to implement the accuracy detection algorithm 
 We in fact get a 67% accuracy when using the ARIMA detection algorithm using "house0002.mat" as our database. There are some cases that the ARIMA model was working better than the statistical model:
 
 ![edgedetect](/images/arima-statcompare.png)
+In this dataset (house00502.mat), we can see that ARIMA gave more details on the edges while statistical methods only roughly plotted a straight line in some pixels that were curvy. This may be caused by the median filtering when we are clearing noise and this makes our statistical method ignore some of the filtered data out.
+
+Also, we are collecting some useful images to put on our poster.
+
+Next week we will finish the poster and presentation will be on Friday.
